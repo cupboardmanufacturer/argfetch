@@ -22,10 +22,10 @@ in this example, we will be fetching the d flag:
 
 ```rust
 fn main() {
-  use argfetch::parse;
+  use argfetch::fetch;
   let args: Vec<String> = env::args().collect(); // get the arguments
-  let a_args = parse(String::from("-d"), &args); // the flag (-a in this example) has to be a string, and the args have to be passed as a reference
-  if a_args.is_empty() { // check if its empty, which means the flag is missing, or has no value
+  let args_value = fetch(String::from("-d"), &args); // the flag (-a in this example) has to be a string, and the args have to be passed as a reference
+  if args_value.is_empty() { // check if its empty, which means the flag is missing, or has no value
     println!("the flag is missing, or is empty");
     std::process::exit(1); // exit
   }
@@ -46,10 +46,10 @@ instead if you wanted to fetch the a flag, you would do:
 
 ```rust
 fn main() {
-  use argfetch::parse;
+  use argfetch::fetch;
   let args: Vec<String> = env::args().collect();
-  let a_args = parse(String::from("-a"), &args);
-  if a_args.is_empty() {
+  let args_value = fetch(String::from("-a"), &args);
+  if args_value.is_empty() {
     println!("the flag is missing, or is empty");
     std::process::exit(1);
   }
@@ -68,10 +68,10 @@ and for getting the e flag:
 
 ```rust
 fn main() {
-  use argfetch::parse;
+  use argfetch::fetch;
   let args: Vec<String> = env::args().collect();
-  let a_args = parse(String::from("-e"), &args);
-  if a_args.is_empty() {
+  let a_args_value = fetch(String::from("-e"), &args);
+  if a_args_value.is_empty() {
     println!("the flag is missing, or is empty");
     std::process::exit(1);
   }
