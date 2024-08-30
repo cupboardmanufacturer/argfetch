@@ -6,7 +6,7 @@ fn parse(flag: String, args: &Vec<String>) -> String {
     
     for arg in args {
         if arg == &flag {
-            while true {
+            loop {
                 if i >= args.len() {
                     return argument.trim().to_string();
                 }
