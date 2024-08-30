@@ -6,5 +6,8 @@ license = "MIT"
 keywords = ["arguments", "flags", "flag", "args", "parser", "cli", "parse", "terminal"]
 categories = ["command-line-interface"]
 repository = "https://github.com/cupboardmanufacturer/argfetch"
+authors = ["cupboardmanufacturer"]
+description = "a simple command line argument parser"
+
 
 [dependencies]
