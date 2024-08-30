@@ -9,11 +9,10 @@ if the flag doesnt exist, or there is no value it will return an empty string
 
 ## usage
 
-either run:
+run:
 ```bash
 $ cargo add argfetch
 ```
-or add `argfetch = "1.0"` to your `cargo.toml` under `[dependencies]`
 
 to use argfetch you have to pass flag you want to get the args from, and the vector of arguments
 
