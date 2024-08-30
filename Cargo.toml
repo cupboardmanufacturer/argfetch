@@ -1,0 +1,10 @@
+[package]
+name = "argfetch"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+keywords = ["arguments", "flags", "flag", "args", "parser", "cli", "parse", "terminal"]
+categories = ["command-line-interface"]
+repository = "https://github.com/cupboardmanufacturer/argfetch"
+
+[dependencies]
