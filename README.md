@@ -22,6 +22,7 @@ in this example, we will be fetching the d flag:
 
 ```rust
 fn main() {
+  use argfetch::parse;
   let args: Vec<String> = env::args().collect(); // get the arguments
   let a_args = parse(String::from("-d"), &args); // the flag (-a in this example) has to be a string, and the args have to be passed as a reference
   if a_args.is_empty() { // check if its empty, which means the flag is missing, or has no value
@@ -45,6 +46,7 @@ instead if you wanted to fetch the a flag, you would do:
 
 ```rust
 fn main() {
+  use argfetch::parse;
   let args: Vec<String> = env::args().collect();
   let a_args = parse(String::from("-a"), &args);
   if a_args.is_empty() {
@@ -66,6 +68,7 @@ and for getting the e flag:
 
 ```rust
 fn main() {
+  use argfetch::parse;
   let args: Vec<String> = env::args().collect();
   let a_args = parse(String::from("-e"), &args);
   if a_args.is_empty() {
