@@ -1,6 +1,6 @@
 // checks if a flag exists, and returns the argument
 // if it does not exist it returns an empty string
-fn parse(flag: String, args: &Vec<String>) -> String {
+pub fn parse(flag: String, args: &Vec<String>) -> String {
     let mut argument = String::new();
     let mut i = 0;
     
