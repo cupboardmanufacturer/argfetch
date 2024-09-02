@@ -7,6 +7,11 @@
 argfetch returns a string that has all the args separated by spaces  
 if the flag doesnt exist, or there is no value it will return an empty string
 
+numbers in () means it is a reference or is being referenced in a diffrent part of the code
+ex:
+`line of code // (0)`
+this does something (0)
+
 ## usage
 
 run:
@@ -104,3 +109,49 @@ $ argfetch-example -d "hi" -a test
 the flag is missing, or is empty
 $
 ```
+
+you can also pass the longer version of the argument, or any other arg, but its not recommended
+to mix arguments, because theres no indicator on which one it is, so only use arg that mean the same thing
+ex: -a and --attribute, both are for the attribute flag
+
+```rust
+use argfetch::fetch;
+
+fn main() {
+  let args: Vec<String> = env::args().collect();
+  let a_args_value = fetch(String::from("-a --attribute"), &args); // separate all args with a space (1)
+
+  if a_args_value.is_empty() {
+    println!("the flag is missing, or is empty");
+    std::process::exit(1);
+  }
+
+  println!("{}", args_value);
+}
+```
+
+then you can run:
+
+```bash
+$ argfetch-example -a test
+test
+$
+```
+or:
+
+```bash
+$ argfetch-example --attribute test
+test
+$
+```
+
+but if both are present, it will get the one that is first in the string where the function is called (1)
+
+```bash
+$ argfetch-example -a hello --attribute test
+hello
+$  argfetch-example --attribute test -a hello
+hello
+$
+```
+
