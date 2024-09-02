@@ -49,6 +49,7 @@ hi
 $
 ```
 
+---
 
 instead if you wanted to fetch the a flag, you would do: 
 
@@ -76,6 +77,8 @@ test
 $
 ```
 
+---
+
 and for getting the e flag:
 
 ```rust
@@ -83,7 +86,7 @@ use argfetch::fetch;
 
 fn main() {
   let args: Vec<String> = env::args().collect();
-  let a_args_value = fetch(String::from("-e"), &args);
+let a_args_value = fetch(String::from("-e"), &args);
 
   if a_args_value.is_empty() {
     println!("the flag is missing, or is empty");
@@ -109,6 +112,8 @@ $ argfetch-example -d "hi" -a test
 the flag is missing, or is empty
 $
 ```
+
+---
 
 you can also pass the longer version of the argument, or any other arg, but its not recommended
 to mix arguments, because theres no indicator on which one it is, so only use arg that mean the same thing
